@@ -1,0 +1,18 @@
+<body class="bg-info ">
+    <div>
+        <div class="bg-white profile" >
+            <div class="row">
+                <div style="width: 230px;" ></div>
+                <div><img src="https://teachingandlearning.schulich.yorku.ca/wp-content/uploads/2019/10/avatar6.png" alt=""></div>
+            </div>
+            <div style="margin-top: 20px;" *ngFor="let student of students">
+                <ul>
+                    <li>User name: {{student.uname}}</li>
+                    <li>Email address: {{student.email}}</li>
+                    <li>Phone: {{student.phone}}</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</body>

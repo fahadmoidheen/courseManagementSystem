@@ -1,0 +1,53 @@
+
+
+<body style="margin-top: -60px;">
+    
+    
+<div class="simple-login">
+    <div class="login">
+    
+    <i class="bi bi-person-badge"></i>
+    <svg xmlns="http://www.w3.org/2000/svg" width="55" height="55" fill="currentColor" class="bi bi-person-badge" viewBox="0 0 16 16">
+        <path d="M6.5 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zM11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+        <path d="M4.5 0A2.5 2.5 0 0 0 2 2.5V14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2.5A2.5 2.5 0 0 0 11.5 0h-7zM3 2.5A1.5 1.5 0 0 1 4.5 1h7A1.5 1.5 0 0 1 13 2.5v10.795a4.2 4.2 0 0 0-.776-.492C11.392 12.387 10.063 12 8 12s-3.392.387-4.224.803a4.2 4.2 0 0 0-.776.492V2.5z"/>
+      </svg><br>
+    <form #stdSignup="ngForm" ngNativeValidate (ngSubmit)="sigupStd()" >
+    <br>
+    <div class="row">
+        <div class="col-md-12 form-group">
+            <input type="text"  class="form-control" placeholder="Username" required #uname="ngModel" name="uname" [(ngModel)]="student.uname" minlength="5">
+        </div>
+        
+    </div>
+    <div class="row">
+        <div class="col-md-12 form-group">
+            <input type="email"  placeholder="Email address " class="form-control" name="email" #email="ngModel" [(ngModel)]="student.email" pattern="^[a-zA-Z0-9.%+]+@[a-zA-Z0-9.-]+\.[a-z]{2,4}">
+            <label for="error" class="text-danger" *ngIf="email.touched && email.invalid"><small>Enter valid Email address!!</small> </label>
+        </div>
+        <div class="col-md-12 form-group">
+            <input type="tel" placeholder="phone number" class="form-control" name="phone" #phone="ngModel" [(ngModel)]="student.phone" minlength="10">
+            <label for="error" class="text-danger" *ngIf="phone.touched && phone.invalid"><small>Enter valid phone number!!</small> </label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 form-group">
+            <input type="password"  class="form-control" placeholder="Enter your password" name="password" #password="ngModel" [(ngModel)]="student.password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$">
+            <label for="error" class="text-danger" *ngIf="password.touched && password.invalid"><small><b>Must have 1
+                Lower case&Uppercase,1 number,1 Symbol and Minimun Length 8</b></small> </label>
+        </div>
+        
+    </div>
+    <div class="row">
+        <div class="col-md-12 form-group" >
+            <button class="btn btn-block btn-login" [disabled]="stdSignup.form.invalid" >Sign Up</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <a routerLink="/student">Already have an account</a>
+        </div>
+    </div>
+     </form>
+    </div>
+</div>
+</body>

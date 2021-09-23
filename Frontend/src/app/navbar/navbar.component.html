@@ -1,0 +1,43 @@
+<nav class="navbar navbar-expand-lg navbar-light  fixed-top transparent">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active ">
+            <a class="nav-link" routerLink="" *ngIf="!auth.StudentloggedIn() && !auth.ProfessorloggedIn()">HOME
+                  <span class="sr-only">(current)</span>
+                </a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" routerLink="student" *ngIf="!auth.StudentloggedIn() && !auth.ProfessorloggedIn()">STUDENT</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" routerLink="pfsrLogin" *ngIf="!auth.StudentloggedIn() && !auth.ProfessorloggedIn()">PROFESSER</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" routerLink="addcourse" *ngIf="auth.ProfessorloggedIn()">ADD COURSE</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" routerLink="apply" *ngIf="auth.StudentloggedIn()">APPLY</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" routerLink="courses" *ngIf="auth.ProfessorloggedIn()||auth.StudentloggedIn() " >COURSES</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" routerLink="studentlist"  *ngIf="auth.ProfessorloggedIn()">STUDENTLIST</a>
+          </li>
+          <li class="nav-item active">
+            <a  class="nav-link" routerLink="/stdHome"  *ngIf="auth.StudentloggedIn()">PROFILE</a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link"  routerLink="/PrfsrHome"  *ngIf="auth.ProfessorloggedIn()">PROFILE</a>
+        </li>
+          <li class="nav-item active">
+            <a class="nav-link" (click)="logout()" *ngIf="auth.ProfessorloggedIn()||auth.StudentloggedIn() ">LOGOUT</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>

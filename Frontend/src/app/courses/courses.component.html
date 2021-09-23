@@ -1,0 +1,27 @@
+<body>
+    <header class="bg-primary text-center py-5 mb-4">
+        <div class="container">
+          <h1 class="font-weight-light text-white">Courses for you</h1>
+        </div>
+      </header>  
+
+      <div class="row" >
+        <div class="card col-sm-3 ml-5 mt-2 mb-5" *ngFor="let courses of course">
+          <h5 class="card-header bg-info" >{{courses.title}}</h5>
+          <div class="card-body">
+            <h5 class="card-title">{{courses.description}}</h5>
+              <div class="card-text">
+                <ul>
+                  <li>Course duration:{{courses.duration}}</li>
+                  <li>Course fee:{{courses.fee}}</li>
+                </ul>
+              </div> 
+
+            
+            <a routerLink="/apply" class="btn btn-primary">APPLY</a>
+          </div>
+        </div>
+      </div>
+      
+</body>
+

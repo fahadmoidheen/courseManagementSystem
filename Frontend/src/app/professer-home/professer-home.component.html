@@ -1,0 +1,21 @@
+<body class="bg-info ">
+    <div>
+        <div class="bg-white profile" >
+            <div class="row">
+                <div style="width: 230px;" ></div>
+                <div><img src="https://www.w3schools.com/howto/img_avatar.png" alt=""></div>
+            </div>
+            <div style="margin-top: 20px;" *ngFor="let professer of professers">
+                <ul>
+                    <li>Name: {{professer.uname}}</li>
+                    <li>Email address: {{professer.email}}</li>
+                    <li>Qualification: {{professer.qual}}</li>
+                    <li>Experiance: {{professer.exp}}</li>
+                   
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</body>
+

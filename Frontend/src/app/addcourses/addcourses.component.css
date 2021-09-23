@@ -1,0 +1,21 @@
+body{
+    background-image: -webkit-gradient(linear, left top, right top, from(#b70b83), to(#33077f));
+}
+.formdiv{
+    
+    border: solid 2px black;
+    padding: 20px;
+    border-radius: 7px;
+    
+}
+input {
+    border: none;
+    border-bottom: 2px solid violet;
+    width: 100%;
+    border-radius: 4px;
+    height:50px;
+    margin-top: 15px;
+  }
+  .btn{
+    margin-top: 15px;
+  }

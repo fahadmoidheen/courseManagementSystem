@@ -1,0 +1,39 @@
+<body>
+    <div style="height: 150px;"></div>
+    <div class="container " >
+        <h1>ADD COURSE</h1>
+        <div class="formdiv bg-light">
+            <form #addcourse="ngForm" ngNativeValidate (ngSubmit)="addCourse()">
+                <div class="row">
+                    <div class="col-md-6">
+                        <input required type="text" placeholder="Course title" name="title" #title="ngModel" [(ngModel)]="courses.title">
+                    </div>
+                    <div class="col-md-6">
+                        <input required type="text" placeholder="Course duration" name="duration" #duration="ngModel" [(ngModel)]="courses.duration" >
+                    </div> 
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <input type="text" required placeholder="Course description" name="description" #description="ngModel" [(ngModel)]="courses.description">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <input required type="text" placeholder="Course fee" name="fee" #fee="ngModel" [(ngModel)]="courses.fee" >
+                    </div>
+                    <div class="col-md-6">
+                        <input required placeholder=" Last Date to register" class="textbox-n" type="text" onfocus="(this.type='date')" id="date" name="lastdate" #lastdate="ngModel" [(ngModel)]="courses.lastdate">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <button class="btn btn-success" type="submit" [disabled]="addcourse.form.invalid"> Submit</button>
+                    </div>
+                </div>
+                
+                
+            </form>
+        </div>
+    
+    </div> 
+</body>

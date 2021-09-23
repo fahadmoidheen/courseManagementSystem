@@ -1,0 +1,66 @@
+<body class="bg-light">
+    <div style="height: 150px;"></div>
+    <div class="container " style="justify-content: center;display: flex;" >
+        <div class="formdiv bg-dark">
+            <div class="row" style="justify-content: center;display: flex;">
+                <h2>Professer SignUp</h2>
+                <i class="bi bi-person-badge-fill"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="55" height="55" fill="currentColor" class="bi bi-person-badge-fill" viewBox="0 0 16 16">
+                    <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm4.5 0a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zM8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm5 2.755C12.146 12.825 10.623 12 8 12s-4.146.826-5 1.755V14a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-.245z"/>
+                  </svg> 
+            </div><br>
+            
+            <form #prfsrSignup="ngForm" ngNativeValidate (ngSubmit)="professerSignup()">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for=""> Username</label>
+                        <input required type="text" placeholder="Username" name="uname" [(ngModel)]="professer.uname">
+                    </div>
+                    <div class="col-md-6">
+                        <label>Email address</label>
+                        <input type="email" required placeholder="Enter your email address" #email="ngModel" name="email"  [(ngModel)]="professer.email"
+                        pattern="^[a-zA-Z0-9.%+]+@[a-zA-Z0-9.-]+\.[a-z]{2,4}">
+                        <label for="error" class="text-danger" *ngIf="email.touched && email.invalid"><small>Please provide Email address!!</small> </label>
+                    </div>
+                </div>
+                <div class="row">
+                    
+                </div><br>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="">Qualification</label>
+                        <input type="text" required placeholder="Qualification" name="qual" [(ngModel)]="professer.qual"> 
+                    </div>
+                    <div class="col-md-6">
+                        <label for="">Experiance</label>
+                        <input type="text" required placeholder="Experiance" name="exp"  [(ngModel)]="professer.exp">
+                    </div>
+                </div><br>
+                
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="">Password</label>
+                        <input type="text" required placeholder="Enter your password" #password="ngModel" name="password" [(ngModel)]="professer.password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$">
+                        <label for="error" class="text-danger" *ngIf="password.touched && password.invalid"><small><b>Must have 1
+                            Lower case&Uppercase,1 number,1 Symbol and Minimun Length 8</b></small> </label>
+                    </div>
+                    <div class="col-md-6">
+                        <label for=""> Repeat Password</label>
+                        <input type="password" required placeholder="Repeat your password" name="rePass" #rePass="ngModel"  [(ngModel)]="professer.rePass" >
+                    </div>
+                </div> <br>
+                <div class="row">
+                    <div class="col-md-6">
+                        <button class="btn btn-success" [disabled]="prfsrSignup.form.invalid" type="submit"> Sign Up</button>
+                    </div>
+                </div>
+            </form>
+            <div class="row">
+                <div class="col-md-12">
+                    <a routerLink="/pfsrLogin">Already have an account?</a>
+                </div>
+            </div>
+        </div>
+    
+    </div> 
+</body>
