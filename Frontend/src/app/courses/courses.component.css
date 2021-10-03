@@ -1,3 +1,8 @@
-li{
-    list-style: none;
+p,h5{
+    border-bottom: 2px solid steelblue;
+}
+#fixedbutton {
+    position: fixed;
+    bottom: 0px;
+    right: 0px; 
 }

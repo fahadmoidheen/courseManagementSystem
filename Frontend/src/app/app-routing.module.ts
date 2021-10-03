@@ -16,20 +16,23 @@ import { ProfesserHomeComponent } from './professer-home/professer-home.componen
 import { CoursesComponent } from './courses/courses.component';
 import { StudentlistComponent } from './studentlist/studentlist.component';
 import { StudentsapplyComponent } from './studentsapply/studentsapply.component';
+import { AcceptedStdListComponent } from './accepted-std-list/accepted-std-list.component';
+import { AuthGuard } from './auth.guard';
 
 
 const routes: Routes = [
   {path:"",component:HomeComponent},
   {path:"student",component:StudentComponent},
   {path:"stdSignup",component:StudentSignupComponent},
-  {path:"addcourse",component:AddcoursesComponent},
+  {path:"addcourse",component:AddcoursesComponent ,canActivate:[AuthGuard]},
   {path:"stdHome",component:StudentHomeComponent},
   {path:"pfsrLogin",component:ProfesserLoginComponent},
   {path:"pfsrSignup",component:ProfesserSignupComponent},
   {path:"PrfsrHome",component:ProfesserHomeComponent},
   {path:"courses",component:CoursesComponent},
-  {path:"studentlist",component:StudentlistComponent},
-  {path:"apply",component:StudentsapplyComponent}
+  {path:"studentlist",component:StudentlistComponent,canActivate:[AuthGuard]},
+  {path:"apply",component:StudentsapplyComponent},
+  {path:"acceptedstudents",component:AcceptedStdListComponent,canActivate:[AuthGuard]}
 ];
 
 @NgModule({

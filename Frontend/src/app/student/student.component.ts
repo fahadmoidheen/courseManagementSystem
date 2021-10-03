@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormsModule,ReactiveFormsModule }   from '@angular/forms';
 import { StudentService } from '../student.service';
+import { AuthService } from '../auth.service';
 
 import Swal from 'sweetalert2'
 
@@ -18,12 +19,12 @@ export class StudentComponent implements OnInit {
     password:""
   }
 
-  constructor(private router:Router,private studentservice:StudentService ) { }
+  constructor(private router:Router,private _auth:AuthService ) { }
 
   ngOnInit(): void {
   }
   loginstd(){
-    this.studentservice.studentLogin(this.std)
+    this._auth.studentLogin(this.std)
     .subscribe(
       res=>{
 
@@ -32,6 +33,7 @@ export class StudentComponent implements OnInit {
         Swal.fire("Succesfully logged in")
           .then(()=>{
       this.router.navigate(["stdHome"])})
+      localStorage.setItem("studentuname",this.std.uname)
       },
       err=>{
         console.log(err)

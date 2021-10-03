@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { FormsModule,ReactiveFormsModule }   from '@angular/forms';
 import { ProfesserService } from '../professer.service';
+import { AuthService } from '../auth.service';
 
 import Swal from 'sweetalert2'
 
@@ -16,14 +17,14 @@ export class ProfesserLoginComponent implements OnInit {
     uname:"",
     password:""
   }
-  constructor(private router:Router,private proservice:ProfesserService ) { }
+  constructor(private router:Router,private _auth:AuthService ) { }
 
   ngOnInit(): void {
   }
 
   professerLogin(){
 
-    this.proservice.professerLogin(this.professer)
+    this._auth.professerLogin(this.professer)
     .subscribe(
       res=>{
         localStorage.setItem('token1', res.token);
@@ -31,6 +32,7 @@ export class ProfesserLoginComponent implements OnInit {
         Swal.fire("Succesfully logged in")
           .then(()=>{
       this.router.navigate(["PrfsrHome"])})
+      localStorage.setItem("professeruname",this.professer.uname)
       },
       err=>{
         console.log(err)

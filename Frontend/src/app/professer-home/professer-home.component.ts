@@ -16,10 +16,13 @@ export class ProfesserHomeComponent implements OnInit {
     rePass:''
   }]
 
-  data=localStorage.getItem("professeremail");
+  data=localStorage.getItem("professeruname");
+  
+  
   constructor(private professer:ProfesserService) { }
 
   ngOnInit(): void {
+    
     this.professer.getProfesserId(this.data).subscribe((data)=>{
       console.log(data)
       this.professers=JSON.parse(JSON.stringify(data))

@@ -8,8 +8,12 @@ body{
     border: black solid 2px;
     height: 400px;
     width: 500;
-    border-radius: 40px;
+    border-radius: 70px 20px;
+    animation: mymove 5s infinite
 }
+@keyframes mymove {
+    50% {border-radius: 50px;}
+  }
 img{
     height: 80px;
     width: 80px;

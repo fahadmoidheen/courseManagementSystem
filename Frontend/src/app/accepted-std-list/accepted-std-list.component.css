@@ -26,26 +26,8 @@ table{
   background-color: green;
   border: 1px solid black;
 }
-#warning{
-  margin-left: 25px;
-  font-size: medium;
-  /* font-weight: bold; */
-  color:white;
-  font-family: sans-serif;
-  background-color: orange;
-  border: 1px solid black;
-  padding: 2px;
 
+.btn{
+  background-color:rgba(23, 184, 135, 0.637);
 }
 
-#rejected{
-  margin-left: 25px;
-  font-size: medium;
-  /* font-weight: bold; */
-  color:white;
-  font-family: sans-serif;
-  background-color: red;
-  border: 1px solid black;
-  padding: 2px;
-
-}

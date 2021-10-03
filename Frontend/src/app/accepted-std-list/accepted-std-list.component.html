@@ -1,0 +1,68 @@
+<div class="main">
+  <div class="row">
+    <!-- <div style="width: 900px;"></div> -->
+    <div style="margin-top: 150px; margin-left: 900px;">
+      <select style="border: solid 2px black; border-radius: 5px; "  [(ngModel)]="coursemail" class="browser-default" name="course"   required>
+        <option value="" disabled selected >Choose course</option>
+        <option *ngFor="let course of courses">{{course.title}}</option>
+      </select>
+    <br><br>
+      <button class="waves-effect waves-light btn" (click)=sentmail()>Send Mail</button>
+    </div>
+  </div>
+ 
+    <div class='card ' style="margin-top: 50px;">
+      <div class='card-header bg-info'>
+     <h4>ACCEPTED STUDENTS</h4>
+      </div>
+      
+      <div class='card-body'>            
+        <div class='table-responsive'>
+          <table class='table'>
+                <!-- *ngIf = 'products && products.length'> -->
+            <thead>
+              <tr>
+               
+                <th>Name</th>
+                
+                <th>Date of Birth</th>
+                <th>Address</th>
+                <th>Email</th>
+                <th>Qulification</th>
+                <th>Course</th>
+              </tr>
+             
+            </thead>
+            <tbody *ngFor=" let acceptedstd of acceptedstds" >  
+                <tr >
+                  <td>
+                     {{acceptedstd.fname}}
+                    </td>
+                   
+                    <td>
+                      {{acceptedstd.DOB}}
+                    </td>
+                    <td>
+                      {{acceptedstd.address}}
+                    </td>
+                    <td>
+                      {{acceptedstd.email}}
+                    </td>
+                    <td>
+                        {{acceptedstd.qual}}
+                    </td>
+                    <td>
+                          {{acceptedstd.course}}
+                    </td>
+                    <!-- <td>
+                      <button (click)=sentmail() class="waves-effect waves-light btn">sent mail</button>
+                </td> -->
+                  </tr>              
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    
+    </div>
+    

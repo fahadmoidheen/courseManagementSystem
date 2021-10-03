@@ -21,32 +21,32 @@
               </tr>
              
             </thead>
-            <tbody >  
+            <tbody *ngFor="let appliedStd of appliedStds">  
                 <tr >
                   <td>
-                     name
+                     {{appliedStd.fname}}
                     </td>
                    
                     <td>
-                    dob
+                      {{appliedStd.DOB}}
                     </td>
                     <td>
-                     address
+                      {{appliedStd.address}}
                     </td>
                     <td>
-                      email
+                      {{appliedStd.email}}
                     </td>
                       <td>
-                     qulification
+                        {{appliedStd.qual}}
                       </td>
                         <td>
-                         course
+                          {{appliedStd.course}}
                         </td>
                        
                         <td>
                      
-                       <button class="btn btn-success" style="cursor:pointer" style="margin-left: 20px; margin-right: 20px;"  > ACCEPT</button> 
-                      <button class="btn btn-danger" style="cursor:pointer"  style="margin-left: 20px; margin-top: 20px; margin-bottom: 20px;" > REJECT</button>
+                       <button class="btn btn-success" style="cursor:pointer" style="margin-left: 10px; margin-right: 20px;" (click)="accept(appliedStd)" > ACCEPT</button> 
+                      <button class="btn btn-danger" style="cursor:pointer"  style="margin-left: 10px; margin-top: 20px; margin-bottom: 20px;" (click)= "reject(appliedStd)" > REJECT</button>
                     
      
                     </td>

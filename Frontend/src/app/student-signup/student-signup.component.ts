@@ -31,8 +31,7 @@ export class StudentSignupComponent implements OnInit {
           icon: 'success',
           confirmButtonText: 'OK'
         })
-        this.router.navigate(["stdHome"])
-        localStorage.setItem("studentuname",this.student.uname)
+        this.router.navigate(["student"])
       }
     
     

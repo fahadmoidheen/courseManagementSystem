@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule,ReactiveFormsModule }   from '@angular/forms';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule,HttpInterceptor } from '@angular/common/http';
+import {  HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,7 +20,15 @@ import { FooterComponent } from './footer/footer.component';
 import { ProfesserHomeComponent } from './professer-home/professer-home.component';
 import { CoursesComponent } from './courses/courses.component';
 import { StudentlistComponent } from './studentlist/studentlist.component';
-import { StudentsapplyComponent } from './studentsapply/studentsapply.component'
+import { StudentsapplyComponent } from './studentsapply/studentsapply.component';
+import { AcceptedStdListComponent } from './accepted-std-list/accepted-std-list.component'
+
+import { TokenInterceptorService } from './token-interceptor.service';
+import { AuthService } from './auth.service';
+import { StudentService } from './student.service';
+import { ProfesserService } from './professer.service';
+import { AuthGuard } from './auth.guard';
+
 
 
 @NgModule({
@@ -37,7 +46,8 @@ import { StudentsapplyComponent } from './studentsapply/studentsapply.component'
     ProfesserHomeComponent,
     CoursesComponent,
     StudentlistComponent,
-    StudentsapplyComponent
+    StudentsapplyComponent,
+    AcceptedStdListComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +57,12 @@ import { StudentsapplyComponent } from './studentsapply/studentsapply.component'
     ReactiveFormsModule,
     HttpClientModule    
   ],
-  providers: [],
+  providers: [AuthService,StudentService,ProfesserService,AuthGuard,
+    {
+      provide:HTTP_INTERCEPTORS,
+      useClass:TokenInterceptorService,
+      multi:true
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -36,10 +36,9 @@ export class ProfesserSignupComponent implements OnInit {
         icon: 'success',
         confirmButtonText: 'OK'
       })
-      this.router.navigate(["PrfsrHome"])
-      localStorage.setItem("professeremail",this.professer.email)
+      this.router.navigate(["pfsrLogin"])
     }else{
-      Swal.fire({
+      Swal.fire({ 
         title: 'Oops',
         text: 'Something wrong',
         icon: 'error',

@@ -16,8 +16,8 @@ export class StudentHomeComponent implements OnInit {
   constructor(private student:StudentService) { }
 
   ngOnInit(): void {
-    this.student.getStudentId(this.data).subscribe((data)=>{
-      console.log(data)
+    this.student.getStudentId(this.data)
+    .subscribe((data)=>{
       this.students=JSON.parse(JSON.stringify(data))
     })
 

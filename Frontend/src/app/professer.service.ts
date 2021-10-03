@@ -16,8 +16,8 @@ export class ProfesserService {
     return this.http.post("http://localhost:3000/prfsrSignup",{item})
     .subscribe(data => { console.log(data) })
   }
-  getProfesserId(email:any){
-    return  this.http.get("http://localhost:3000/professerID/"+email)
+  getProfesserId(uname:any){
+    return  this.http.get("http://localhost:3000/professerID/"+uname)
   }
 
   addCourse(item:any){
@@ -27,8 +27,21 @@ export class ProfesserService {
   getCourses(){
     return  this.http.get("http://localhost:3000/getCourse")
   }
-
-  professerLogin(prfsr:any){
-    return this.http.post<any>("http://localhost:3000/prfsrLogin",prfsr)
+  getAppliedStd(){
+    return  this.http.get("http://localhost:3000/getAppliedStd")
   }
+  accept(user:any){
+    return this.http.put("http://localhost:3000/accept",user)
+  }
+  reject(user:any){
+    return this.http.put("http://localhost:3000/reject",user)
+  }
+acceptedList(){
+  return this.http.get("http://localhost:3000/acceptedList")
+}
+sendmailto(items:any){
+    
+  return this.http.post('http://localhost:3000/sendmail',{"course":items})
+   
+}
 }

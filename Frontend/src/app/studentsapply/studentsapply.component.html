@@ -1,0 +1,63 @@
+
+<body class="bg-light">
+    <div style="height: 150px;"></div>
+    <div class="container " style="justify-content: center;display: flex;" >
+        <div class="formdiv ">
+            <div class="row" style="justify-content: center;display: flex;">
+                <h2>Apply </h2> 
+            </div><br>
+            
+            <form #applform="ngForm" ngNativeValidate  (ngSubmit)="applyCourse()">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for=""> First Name</label>
+                        <input required type="text" placeholder="First Name"  name="fname" [(ngModel)]="applyform.fname">
+                    </div>
+                    <div class="col-md-6">
+                        <label>Last Name</label>
+                        <input type="text" required placeholder="Last name"  name="lname" [(ngModel)]="applyform.lname">  
+                    </div>
+                </div>
+                <div class="row">
+                    
+                </div><br>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="">Email address</label>
+                        <input type="email" required placeholder="Email address" name="email" #email="ngModel" [(ngModel)]="applyform.email" pattern="^[a-zA-Z0-9.%+]+@[a-zA-Z0-9.-]+\.[a-z]{2,4}" > 
+                    </div>
+                    <div class="col-md-6">   
+                        <label for="">Date of birth</label>
+                        <input type="date" required placeholder="DOB" name="DOB" #DOB="ngModel" [(ngModel)]="applyform.DOB" >
+                    </div>
+                </div><br>
+                
+                <div class="row">
+                    <div class="col-md-12">
+                        <label for="">Permanent address</label>
+                        <input type="text" required placeholder="Permanent address" name="address" #address="ngModel" [(ngModel)]="applyform.address" >
+                    </div>
+                </div> <br>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="">Qualification</label>
+                        <input type="text" required placeholder="Qualification" name="qual" #qual="ngModel" [(ngModel)]="applyform.qual" > 
+                    </div>
+                    <div class="col-md-6">
+                        <select class="browser-default" name="course" [(ngModel)]="applyform.course" #course="ngModel" >
+                            <label for="">Qualification</label>
+                            <option value="" disabled  selected >Choose your course</option>
+                            <option *ngFor="let course of courses" >{{course.title}}</option>
+                          </select>
+                    </div>
+                </div><br>
+                <div class="row">
+                    <div class="col-md-6">
+                        <button class="btn btn-success" [disabled]="applform.form.invalid" type="submit"> APPLY</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    
+    </div> 
+</body>

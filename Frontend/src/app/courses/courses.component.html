@@ -6,19 +6,17 @@
       </header>  
 
       <div class="row" >
-        <div class="card col-sm-3 ml-5 mt-2 mb-5" *ngFor="let courses of course">
+        <div class="card col-sm-5 ml-5 mt-2 mb-5" *ngFor="let courses of course">
           <h5 class="card-header bg-info" >{{courses.title}}</h5>
-          <div class="card-body">
-            <h5 class="card-title">{{courses.description}}</h5>
+          <div class="card-body d-flex flex-column">
+            <h6 class="card-text">{{courses.description}}</h6>
               <div class="card-text">
-                <ul>
-                  <li>Course duration:{{courses.duration}}</li>
-                  <li>Course fee:{{courses.fee}}</li>
-                </ul>
-              </div> 
-
-            
-            <a routerLink="/apply" class="btn btn-primary">APPLY</a>
+                <p>Course duration:{{courses.duration}}</p>
+                <p>Course fee:{{courses.fee}}</p>
+                <p>Last date to register :{{courses.lastdate}}</p>
+                
+              </div>
+            <a routerLink="/apply" class="btn btn-primary mt-auto" *ngIf="auth.StudentloggedIn() && isDisabled(courses.lastdate)" id="">APPLY</a>
           </div>
         </div>
       </div>

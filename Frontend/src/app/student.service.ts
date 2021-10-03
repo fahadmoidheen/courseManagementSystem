@@ -26,8 +26,15 @@ export class StudentService {
   getStudentId(uname:any){
     return  this.http.get("http://localhost:3000/studentID/"+uname)
   }
-  studentLogin(std:any){
-    return this.http.post<any>("http://localhost:3000/stdLogin",std)
+  
+
+  applyForm(apply:any){
+    return this.http.post("http://localhost:3000/apply",{apply})
+    .subscribe(
+      err=>{
+        console.log(err);
+      }
+    )
   }
 
 }

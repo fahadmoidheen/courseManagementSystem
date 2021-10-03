@@ -20,13 +20,13 @@
             <a class="nav-link" routerLink="addcourse" *ngIf="auth.ProfessorloggedIn()">ADD COURSE</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" routerLink="apply" *ngIf="auth.StudentloggedIn()">APPLY</a>
-          </li>
-          <li class="nav-item active">
             <a class="nav-link" routerLink="courses" *ngIf="auth.ProfessorloggedIn()||auth.StudentloggedIn() " >COURSES</a>
           </li>
           <li class="nav-item active">
             <a class="nav-link" routerLink="studentlist"  *ngIf="auth.ProfessorloggedIn()">STUDENTLIST</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" routerLink="acceptedstudents"  *ngIf="auth.ProfessorloggedIn()"> ACCEPTED STUDENT</a>
           </li>
           <li class="nav-item active">
             <a  class="nav-link" routerLink="/stdHome"  *ngIf="auth.StudentloggedIn()">PROFILE</a>

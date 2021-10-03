@@ -31,7 +31,7 @@
     </div>
     <div class="row">
         <div class="col-md-12 form-group">
-            <input type="password"  class="form-control" placeholder="Enter your password" name="password" #password="ngModel" [(ngModel)]="student.password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$">
+            <input type="password" required class="form-control" placeholder="Enter your password" name="password" #password="ngModel" [(ngModel)]="student.password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$">
             <label for="error" class="text-danger" *ngIf="password.touched && password.invalid"><small><b>Must have 1
                 Lower case&Uppercase,1 number,1 Symbol and Minimun Length 8</b></small> </label>
         </div>
